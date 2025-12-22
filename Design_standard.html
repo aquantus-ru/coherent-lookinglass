@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Code Examples | COHERENT (MSN Style)</title>
+    <meta name="description" content="This is the higher power page, html.md." />
+    <meta name="robots" content="all" />
+    <link rel="canonical" href="https://coherent.sbs/html" />
+<style>
+/* --- MSN 2007 Style Sheet (Refined) --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #333;
+  margin: 0;
+  background-color: #003366; /* Classic MSN Dark Blue */
+  background-image: linear-gradient(to bottom, #003366 0%, #004b8d 100%);
+  background-attachment: fixed;
+}
+
+/* --- Page Wrapper --- */
+#page-wrapper {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-left: 1px solid #5d7b9d;
+  border-right: 1px solid #5d7b9d;
+  min-height: 100vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Typography Utilities --- */
+a { color: #003399; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small-text { font-size: 10px; color: #666; }
+.bold { font-weight: bold; }
+
+/* --- Top Utility Bar (Super Topbar) --- */
+.super-topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 10px;
+  background-color: #dbe8f9;
+  color: #666;
+  font-size: 10px;
+  border-bottom: 1px solid #bad2ea;
+}
+.super-topbar .right-links a {
+  color: #444;
+  margin-left: 10px;
+}
+
+/* --- Main Brand Header --- */
+.header {
+  background: #fff;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.header .logo h1 {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 24px;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -1px;
+}
+.header .search-area {
+  background: #eaf3ff;
+  border: 1px solid #b3c9e5;
+  padding: 4px;
+  border-radius: 2px;
+}
+.header input[type="text"] {
+  border: 1px solid #7f9db9;
+  font-size: 11px;
+  padding: 2px;
+  width: 200px;
+}
+.header input[type="submit"] {
+  background: url('https://placehold.co/1x20/2a81cf/2a81cf') repeat-x;
+  background-color: #2a81cf;
+  color: white;
+  border: 1px solid #003366;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1px 6px;
+}
+
+/* --- Channel Navigation (Tabs) --- */
+.channel-nav {
+  background-color: #0d4a97;
+  border-top: 1px solid #5a8bc3;
+  border-bottom: 3px solid #fff;
+  padding: 0 10px;
+  height: 22px;
+  line-height: 22px;
+}
+.channel-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.channel-nav li { margin: 0; }
+.channel-nav a {
+  display: block;
+  color: #fff;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 11px;
+  text-decoration: none;
+  border-right: 1px solid #4a7bb5;
+}
+.channel-nav a:hover { background-color: #3673bd; }
+
+/* --- Sub-Channel Bar (Gray) --- */
+.sub-channel-nav {
+  background-color: #e3e3e3;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 15px;
+  font-size: 10px;
+  color: #333;
+}
+.sub-channel-nav a { color: #333; margin-right: 10px; }
+
+/* --- Welcome / Highlights Section --- */
+.welcome-nav {
+  background: #f1f7fe;
+  border-bottom: 1px solid #d4e3f6;
+  padding: 10px 15px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+}
+.welcome-left h4 { margin: 0 0 5px; color: #c00; font-size: 11px; }
+
+/* --- Main Layout --- */
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Sidebar | Main */
+  gap: 15px;
+  padding: 15px;
+  align-items: start;
+  flex: 1; /* Pushes footer to bottom */
+}
+
+/* --- Sidebar Styling --- */
+.sidebar-col { display: flex; flex-direction: column; gap: 15px; }
+
+.box {
+  border: 1px solid #9fbdda;
+  background: #fff;
+}
+.box h3 {
+  /* The Classic Gradient Header */
+  background: linear-gradient(to bottom, #ffffff 0%, #dcebfb 50%, #cce1f8 100%);
+  border-bottom: 1px solid #9fbdda;
+  padding: 5px 8px;
+  margin: 0;
+  font-size: 11px;
+  color: #003366;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.box-content { padding: 8px; font-size: 11px; }
+
+/* Sidebar Nav Links */
+.sidebar-nav-list { list-style: none; padding: 0; margin: 0; }
+.sidebar-nav-list li {
+  border-bottom: 1px dotted #ccc;
+  padding: 4px 0;
+}
+.sidebar-nav-list li:last-child { border-bottom: none; }
+.sidebar-nav-list a { display: block; color: #003399; }
+.sidebar-nav-list a.current { font-weight: bold; color: #000; background-color: #f0f5fa; margin: -4px 0; padding: 4px 0; }
+.sidebar-nav-list a:hover { background-color: #f7f7f7; text-decoration: none; color: #c00; }
+.sidebar-nav-list .sub-link { padding-left: 12px; font-size: 10px; }
+
+/* --- Main Content Styling --- */
+.main-col { min-width: 0; /* Prevents overflow */ }
+
+.article-header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+.article-header h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  color: #333;
+  margin: 0 0 5px 0;
+  font-weight: normal;
+}
+.article-meta {
+  background-color: #e0e0e0;
+  padding: 3px 5px;
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 15px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+/* --- "Article Tools" Box (Float Right) --- */
+.article-tools {
+  float: right;
+  width: 160px;
+  background: #f3f8fe;
+  border: 1px solid #a3c4e6;
+  margin: 0 0 15px 15px;
+  padding: 0;
+}
+.article-tools h4 {
+  background: #dcebfb;
+  margin: 0;
+  padding: 3px 5px;
+  font-size: 10px;
+  border-bottom: 1px solid #a3c4e6;
+  color: #333;
+}
+.article-tools ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+.article-tools li {
+  padding: 2px 0;
+  font-size: 10px;
+  background: url('data:image/gif;base64,R0lGODlhBAAEAJEAAAAAAP///+zq5////yH5BAEAAAMALAAAAAAEAAQAAAIDnI9WADs=') no-repeat 0 6px;
+  padding-left: 10px;
+}
+
+/* =========================================
+   FORM ELEMENTS & INPUT STYLES
+   ========================================= */
+
+/* Generic Input Styling (XP/2007 Style) */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+  border: 1px solid #7f9db9; /* Classic XP Blue Border */
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  padding: 3px;
+  color: #333;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+input:focus, 
+textarea:focus, 
+select:focus {
+  border-color: #003399; /* Highlight color on focus */
+  outline: none;
+}
+
+textarea {
+  width: 98%;
+  font-family: 'Courier New', Courier, monospace; /* Monospace for code/text editing */
+  min-height: 80px;
+}
+
+/* Buttons (Generic & Submit) */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.btn {
+  background: #e0e0e0;
+  background-image: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+  border: 1px solid #888;
+  color: #333;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.btn:hover {
+  background-color: #ccc;
+  border-color: #555;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Primary Action Button (Blue) */
+.btn-primary,
+input[type="submit"].btn-primary {
+  background-color: #2a81cf;
+  background-image: linear-gradient(to bottom, #4f96d1, #2a81cf);
+  color: white;
+  border: 1px solid #145b9a;
+  font-weight: bold;
+}
+.btn-primary:hover {
+  background-color: #0b4da2;
+  border-color: #003366;
+  color: #fff;
+}
+
+/* Checkboxes & Radio Buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+  margin: 0 4px 0 0;
+}
+
+/* Fieldsets & Legends */
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #fcfcfc;
+}
+legend {
+  font-weight: bold;
+  color: #004a91;
+  padding: 0 5px;
+}
+
+/* Form Layout Helpers */
+.form-group {
+  margin-bottom: 10px;
+}
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 3px;
+  color: #444;
+}
+.form-hint {
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* =========================================
+   EXTENDED BBCODE / CONTENT STYLES
+   ========================================= */
+
+/* 1. Blockquotes (Editor's Note style) */
+blockquote {
+  background-color: #f9f9f9;
+  border-left: 3px solid #003366;
+  margin: 15px 0;
+  padding: 10px 15px;
+  font-style: italic;
+  font-family: Georgia, serif;
+  color: #555;
+}
+blockquote p { margin: 0; }
+
+/* 2. Code Blocks (The 'Terminal' look) */
+pre {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  color: #000;
+}
+code {
+  background: #eee;
+  padding: 1px 3px;
+  font-family: 'Consolas', monospace;
+  color: #c00;
+}
+
+/* 3. Tables (Financial Data Style) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 11px;
+  border: 1px solid #ccc;
+}
+table th {
+  background: #e6eff9;
+  color: #003366;
+  font-weight: bold;
+  text-align: left;
+  padding: 5px 8px;
+  border-bottom: 1px solid #9fbdda;
+}
+table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #eee;
+}
+table tr:nth-child(even) { background-color: #faffff; }
+/* Specialized 'Ticker' coloring classes */
+.diff-up { color: green; }
+.diff-down { color: red; }
+
+/* 4. Alert Boxes (Info/Warning) */
+.msn-alert {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.msn-alert.info {
+  background-color: #f0f8ff;
+  border-color: #bcd4e6;
+}
+.msn-alert.warning {
+  background-color: #fff8dc;
+  border-color: #e6dbb9;
+}
+.msn-alert-icon {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* 5. Images */
+.content-image {
+  border: 1px solid #ccc;
+  padding: 2px;
+  background: #fff;
+  max-width: 100%;
+  height: auto;
+}
+.image-caption {
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: 20px;
+  border-top: 3px solid #003366;
+  background: #f7f7f7;
+  padding: 10px 15px;
+  font-size: 10px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer a { color: #666; text-decoration: none; margin: 0 5px; }
+footer a:hover { text-decoration: underline; }
+footer .windows-logo { width: 14px; height: 14px; vertical-align: middle; margin-right: 2px; }
+footer .left-links, footer .right-links { display: flex; align-items: center; white-space: nowrap; }
+footer .copyright { flex-grow: 1; text-align: center; margin: 0 10px; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  #page-wrapper { width: 100%; border: none; }
+  .container { grid-template-columns: 1fr; }
+  .welcome-nav { grid-template-columns: 1fr; }
+  .channel-nav { height: auto; padding-bottom: 5px; }
+  .channel-nav ul { flex-wrap: wrap; }
+  .article-tools { float: none; width: 100%; margin: 10px 0; }
+    
+  /* Stack footer on mobile */
+  footer { flex-direction: column; gap: 10px; }
+  footer .left-links, footer .right-links { justify-content: center; }
+
+  /* --- HEADER MOBILE STACKING --- */
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header .search-area {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  .header form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .header form > div {
+    /* Target the div holding input and button to make it flex */
+    display: flex;
+    gap: 5px;
+  }
+  .header input[type="search"] {
+    width: 100% !important; /* Override the fixed width from desktop */
+    flex: 1;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="page-wrapper">
+
+  <div class="super-topbar">
+    <div class="left-links">
+      <span class="bold">Monday, December 22, 2025</span>
+    </div>
+    <div class="right-links">
+        <a href="/waveforum.php?view=login">LOGIN</a>
+    </div>
+  </div>
+
+  <div class="header">
+     
+    <div style="position: relative; display: inline-block;">
+        
+        <div id="canvas-ii0vyprf4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; border-radius: 4px; background-color: #003366;"></div>
+        
+        <div class="logo" style="position: relative; z-index: 1; padding: 10px 20px;">
+            <h1 style="color: #ffffff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5); white-space: nowrap;">
+                COHERENT<span style="font-weight:normal; font-family:Arial; font-size:20px; color:#a3c4e6;">.sbs</span>
+            </h1>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script>
+            (function() {
+                const config = {
+                    "shape": "wave",
+                    "count": 180,           // Slightly fewer particles for a cleaner look in a small space
+                    "size": 0.2,            // Larger dots for visibility
+                    "linkDist": 10,         // Tighter connections
+                    "speed": 0.3,
+                    "spread": 80,           // Reduced spread to fit the smaller container
+                    "zoom": 3,             // Zoomed out (higher value) so the whole wave is visible
+                    "particleColor": "#ffffff", 
+                    "lineColor": "#ffffff",      
+                    "bgColor": "#003366",        
+                    "isTransparent": false
+                };
+                const container = document.getElementById('canvas-ii0vyprf4');
+                
+                const scene = new THREE.Scene();
+                // Initialize camera with dummy aspect ratio, will be fixed by resizeObserver immediately
+                const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                
+                if (!config.isTransparent) scene.background = new THREE.Color(config.bgColor);
+                
+                container.appendChild(renderer.domElement);
+
+                // Set initial camera Z position based on zoom config
+                camera.position.z = 400 / config.zoom;
+
+                const particleGroup = new THREE.Group();
+                scene.add(particleGroup);
+
+                let particlesData = [];
+                let pointCloud;
+                let linesMesh;
+
+                function init() {
+                    const geometry = new THREE.BufferGeometry();
+                    const pPositions = [];
+                    const r = config.spread;
+                    
+                    for (let i = 0; i < config.count; i++) {
+                        let x, y, z, ox, oz;
+                        x = (Math.random() - 0.5) * 2 * r * 2.5; // Wider X range for the text shape
+                        z = (Math.random() - 0.5) * 2 * r;
+                        y = Math.sin(x * 0.01) * 30;
+                        ox = x; oz = z;
+
+                        pPositions.push(x, y, z);
+                        particlesData.push({ 
+                            velocity: new THREE.Vector3(-1+Math.random()*2, -1+Math.random()*2, -1+Math.random()*2),
+                            originalX: ox, originalZ: oz
+                        });
+                    }
+
+                    geometry.setAttribute('position', new THREE.Float32BufferAttribute(pPositions, 3));
+                    const pMaterial = new THREE.PointsMaterial({ color: config.particleColor, size: config.size, transparent: true, opacity: 0.9, sizeAttenuation: true });
+                    pointCloud = new THREE.Points(geometry, pMaterial);
+                    particleGroup.add(pointCloud);
+
+                    const segments = config.count * config.count;
+                    const lGeometry = new THREE.BufferGeometry();
+                    lGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(segments * 3), 3).setUsage(THREE.DynamicDrawUsage));
+                    lGeometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(segments * 3), 3).setUsage(THREE.DynamicDrawUsage));
+                    const lMaterial = new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.85 }); // High opacity for clear white lines
+                    linesMesh = new THREE.LineSegments(lGeometry, lMaterial);
+                    particleGroup.add(linesMesh);
+
+                    particleGroup.rotation.set(0.3, 0, 0);
+                }
+
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    if (config.speed > 0) {
+                        let vertexpos = 0;
+                        let colorpos = 0;
+                        let numConnected = 0;
+                        const positions = pointCloud.geometry.attributes.position.array;
+                        const colors = linesMesh.geometry.attributes.color.array;
+                        const linePositions = linesMesh.geometry.attributes.position.array;
+                        const lineCol = new THREE.Color(config.lineColor);
+                        const time = Date.now() * 0.001 * config.speed * 2;
+
+                        for (let i = 0; i < config.count; i++) {
+                            const data = particlesData[i];
+                            
+                            // Wave Logic
+                            data.originalX += data.velocity.x * config.speed * 0.5;
+                            data.originalZ += data.velocity.z * config.speed * 0.5;
+                            const limit = config.spread * 2.5; // Matches the wider X range
+                            const zLimit = config.spread;
+                            
+                            if (data.originalX > limit) data.originalX = -limit;
+                            if (data.originalX < -limit) data.originalX = limit;
+                            if (data.originalZ > zLimit) data.originalZ = -zLimit;
+                            if (data.originalZ < -zLimit) data.originalZ = zLimit;
+                            
+                            positions[i*3] = data.originalX;
+                            positions[i*3+2] = data.originalZ;
+                            // Tighter wave amplitude (15 instead of 30) to fit better vertically
+                            positions[i*3+1] = Math.sin(data.originalX * 0.015 + time) * 15 + Math.sin(data.originalZ * 0.02 + time * 0.5) * 15;
+
+                            if (config.linkDist > 0) {
+                                for (let j = i + 1; j < config.count; j++) {
+                                    const dx = positions[i*3] - positions[j*3];
+                                    const dy = positions[i*3+1] - positions[j*3+1];
+                                    const dz = positions[i*3+2] - positions[j*3+2];
+                                    const dist = Math.sqrt(dx*dx+dy*dy+dz*dz);
+                                    if (dist < config.linkDist) {
+                                            linePositions[vertexpos++] = positions[i*3];
+                                            linePositions[vertexpos++] = positions[i*3+1];
+                                            linePositions[vertexpos++] = positions[i*3+2];
+                                            linePositions[vertexpos++] = positions[j*3];
+                                            linePositions[vertexpos++] = positions[j*3+1];
+                                            linePositions[vertexpos++] = positions[j*3+2];
+                                            colors[colorpos++] = lineCol.r; colors[colorpos++] = lineCol.g; colors[colorpos++] = lineCol.b;
+                                            colors[colorpos++] = lineCol.r; colors[colorpos++] = lineCol.g; colors[colorpos++] = lineCol.b;
+                                            numConnected++;
+                                    }
+                                }
+                            }
+                        }
+                        linesMesh.geometry.setDrawRange(0, numConnected * 2);
+                        linesMesh.geometry.attributes.position.needsUpdate = true;
+                        linesMesh.geometry.attributes.color.needsUpdate = true;
+                        pointCloud.geometry.attributes.position.needsUpdate = true;
+                    }
+                    renderer.render(scene, camera);
+                }
+                
+                init();
+                animate();
+
+                // Responsive Observer
+                const resizeObserver = new ResizeObserver(entries => {
+                    for (let entry of entries) {
+                        if(entry.contentRect.width > 0 && entry.contentRect.height > 0) {
+                            camera.aspect = entry.contentRect.width / entry.contentRect.height;
+                            camera.updateProjectionMatrix();
+                            renderer.setSize(entry.contentRect.width, entry.contentRect.height);
+                        }
+                    }
+                });
+                resizeObserver.observe(container);
+            })();
+        </script>
+    </div>
+
+    <div class="search-area">
+            <form id="search_form" action="https://coherent.sbs/search" style="display:flex; flex-direction:column; gap:5px;">
+                <label for="search_input" style="font-weight:bold; color:#444;">Search:</label>
+                
+                <div style="display:flex; gap:5px;">
+                    <input type="search" id="search_input" name="q" value="" style="flex:1; border: 1px solid #7f9db9; padding: 3px;" placeholder="e.g. Market Trends..." />
+                    <input type="submit" value="Search" class="btn-primary" style="padding: 2px 10px;" />
+                </div>
+            </form>
+    </div>
+
+    <script type="text/javascript">
+        // Intercept form submit and go to the search results page directly
+        document.getElementById('search_form').addEventListener('submit', function (e) {
+            var search_terms = document.getElementById('search_input').value;
+            if(search_terms) {
+                location.href = 'https://coherent.sbs/search/' + encodeURIComponent(search_terms);
+            }
+            e.preventDefault();
+        });
+    </script>
+  </div>
+
+  <div class="channel-nav">
+    <ul>
+            <li>
+            <a href="https://coherent.sbs/" target="">
+                Home
+            </a>
+        </li>
+            <li>
+            <a href="/waveforum.php" target="">
+                Forum
+            </a>
+        </li>
+        </ul>
+  </div>
+
+  <div class="sub-channel-nav">
+                <a href="https://coherent.sbs/?link=https://aquantus.ru/jobs/craigslist_unified.php" target="">
+                Craigslist Jobs
+            </a>
+                <a href="http://localhost:8000/sub/page" target="_blank">
+                Sub Page
+            </a>
+      </div>
+
+  
+  <div class="container">
+    
+    <div class="sidebar-col">
+
+            <div class="box">
+            <h3>COHERENT.sbs</h3>
+            <div class="box-content">
+                <ul class="sidebar-nav-list">
+                                            <li>
+                            <a href="/" class="" target="">
+                                Welcome
+                            </a>
+                            
+                                                                                </li>
+                                            <li>
+                            <a href="/search" class="" target="">
+                                Search
+                            </a>
+                            
+                                                                                </li>
+                                            <li>
+                            <a href="/contact" class="" target="">
+                                Contact
+                            </a>
+                            
+                                                                                </li>
+                                    </ul>
+            </div>
+        </div>
+
+      <div class="box">
+        <h3>Pages</h3>
+        <div class="box-content">
+          <ul class="sidebar-nav-list">
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/blog" class="">
+                      Blog Posts
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/filecabinet" class="">
+                      File Cabinet
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/php" class="">
+                      PHP Code Examples
+                  </a>
+                                                    </li>
+                                                            
+                <li>
+                  <a href="https://coherent.sbs/html" class="current">
+                      HTML Code Examples
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/religion" class="">
+                      Religion
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/physics-book" class="">
+                      Physics Book
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/science" class="">
+                      Science
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/test-tools" class="">
+                      Test Tools
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/webs-proxy" class="">
+                      Web Proxy/API
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/webs-source-proxy" class="">
+                      Web View-Source/API
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/desk" class="">
+                      Office Desk
+                  </a>
+                                                    </li>
+                                                                                                
+                <li>
+                  <a href="https://coherent.sbs/mdcode" class="">
+                      MD Code Examples
+                  </a>
+                                                    </li>
+                      </ul>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Resources</h3>
+        <div class="box-content">
+            <ul class="sidebar-nav-list">
+                            <li>
+                    <a href="https://coherent.sbs/?link=https://aquantus.ru/jobs/craigslist_unified.php" class="home-link" target="">
+                        Craigslist Jobs
+                    </a>
+                                    </li>
+                            <li>
+                    <a href="http://localhost:8000/sub/page" class="" target="_blank">
+                        Sub Page
+                    </a>
+                                    </li>
+                        </ul>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <div id="ntv_2103072"></div>
+        <script type="text/javascript">
+        (function(d) {
+        	var params =
+        	{
+        		bvwidgetid: "ntv_2103072",
+        		bvlinksownid: 2103072,
+        		rows: 1,
+        		cols: 1,
+        		textpos: "below",
+        		imagewidth: 140,
+        		mobilecols: 1,
+        		cb: (new Date()).getTime()
+        	};
+        	params.bvwidgetid = "ntv_2103072" + params.cb;
+        	d.getElementById("ntv_2103072").id = params.bvwidgetid;
+        	var qs = Object.keys(params).reduce(function(a, k){ a.push(k + '=' + encodeURIComponent(params[k])); return a},[]).join(String.fromCharCode(38));
+        	var s = d.createElement('script'); s.type='text/javascript';s.async=true;
+        	var p = 'https:' == document.location.protocol ? 'https' : 'http';
+        	s.src = p + "://cdn.hyperpromote.com/bidvertiser/tags/active/bdvws.js?" + qs;
+        	d.getElementById(params.bvwidgetid).appendChild(s);
+        })(document);
+        </script>
+      </div>
+
+    </div>
+    
+    <div class="main-col">      <!-- HEADER LOGIC SWITCH: Check 'meta.header' -->
+      
+        <!-- TYPE 2 & 3: STANDARD or HIDDEN Header -->
+        
+        <!-- Article Tools (Only show if NOT using 'Box' or 'Hidden' mode, usually) -->
+         
+        <!-- Content Output -->
+        <div style="line-height: 1.6; font-size: 12px;">
+          <div class="box">
+    <h3>BB Code</h3>
+    <div class="box-content">
+        Do you believe in a higher power?
+        * [ ] Yes
+        * [ ] No  
+        Monday, December 22nd, 2025, 11:09 AM
+
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>Hit Counter</h3>
+    <div class="box-content">
+This page has been viewed: 0
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>PHP Code</h3>
+    <div class="box-content">
+<h3>Page Views</h3><table style="width:100%; border-collapse: collapse; margin-bottom: 20px;"><thead style="border-bottom: 2px solid #555;"><tr><th style="text-align: left; padding: 10px;">Page Slug</th><th style="text-align: right; padding: 10px;">Hits</th></tr></thead><tbody><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">404</td><td style="text-align: right; padding: 8px;">9,519</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">index</td><td style="text-align: right; padding: 8px;">6,330</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">test</td><td style="text-align: right; padding: 8px;">191</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">hp</td><td style="text-align: right; padding: 8px;">116</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">science/elements</td><td style="text-align: right; padding: 8px;">51</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">science/phy-hydrogen</td><td style="text-align: right; padding: 8px;">43</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">science/phy-magnetism</td><td style="text-align: right; padding: 8px;">40</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">search</td><td style="text-align: right; padding: 8px;">37</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">folder/filecabinet</td><td style="text-align: right; padding: 8px;">36</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">folder/file</td><td style="text-align: right; padding: 8px;">34</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">statistics</td><td style="text-align: right; padding: 8px;">32</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">desk/paper</td><td style="text-align: right; padding: 8px;">29</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">sitemap</td><td style="text-align: right; padding: 8px;">27</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">folder/index</td><td style="text-align: right; padding: 8px;">25</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">science/phy-oxygen17</td><td style="text-align: right; padding: 8px;">23</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">mdcode</td><td style="text-align: right; padding: 8px;">18</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">php</td><td style="text-align: right; padding: 8px;">16</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">contact</td><td style="text-align: right; padding: 8px;">14</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">filecabinet/document</td><td style="text-align: right; padding: 8px;">12</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">phy</td><td style="text-align: right; padding: 8px;">11</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">filecabinet/file</td><td style="text-align: right; padding: 8px;">11</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">filecabinet/stamper</td><td style="text-align: right; padding: 8px;">11</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">filecabinet/folder</td><td style="text-align: right; padding: 8px;">10</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">blog/1</td><td style="text-align: right; padding: 8px;">9</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">html</td><td style="text-align: right; padding: 8px;">8</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">blog/3</td><td style="text-align: right; padding: 8px;">8</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">blog/2</td><td style="text-align: right; padding: 8px;">7</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">science/phy-fundamental-forces</td><td style="text-align: right; padding: 8px;">7</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">privacy</td><td style="text-align: right; padding: 8px;">1</td></tr></tbody></table><h3 style="margin-top:30px;">Outbound Link Clicks</h3><table style="width:100%; border-collapse: collapse; margin-bottom: 20px;"><thead style="border-bottom: 2px solid #555;"><tr><th style="text-align: left; padding: 10px;">Target URL</th><th style="text-align: right; padding: 10px;">Hits</th></tr></thead><tbody><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://aquantus.ru/jobs/craigslist_unified.php</td><td style="text-align: right; padding: 8px;">19</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://aquantus.ru/jobs/craigslistv8.php</td><td style="text-align: right; padding: 8px;">17</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://aquantus.ru/jobs/craigslistv1.php</td><td style="text-align: right; padding: 8px;">17</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://aquantus.ru/jobs/craigslistv9.php</td><td style="text-align: right; padding: 8px;">9</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://coherent.sbs/?search</td><td style="text-align: right; padding: 8px;">8</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://coherent.sbs/?statistics</td><td style="text-align: right; padding: 8px;">7</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://coherent.sbs/?phy</td><td style="text-align: right; padding: 8px;">7</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://coherent.sbs/?blog</td><td style="text-align: right; padding: 8px;">7</td></tr><tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px; word-break: break-all;">https://duckduckgo.com</td><td style="text-align: right; padding: 8px;">1</td></tr></tbody></table>
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>Login</h3>
+    <div class="box-content">
+        <form action="#" method="POST" class="form-container">
+            <div class="form-group">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" name="email" id="email" autocomplete="email" required="" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" id="password" autocomplete="current-password" required="" class="form-input">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="form-button">
+                    Sign In
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>User Data Table</h3>
+    <div class="box-content">
+        <div class="data-table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jane Doe</td>
+                        <td>Software Engineer</td>
+                        <td>
+                            Active
+                        </td>
+                        <td>Member</td>
+                    </tr>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>Lead Developer</td>
+                        <td>
+                            Pending
+                        </td>
+                        <td>Admin</td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Connor</td>
+                        <td>UI/UX Designer</td>
+                        <td>
+                            Active
+                        </td>
+                        <td>Member</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>Example Cards</h3>
+    <div class="box-content">
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <div style="width: calc(50% - 8px); min-width: 200px; border: 1px solid #ccc; background: #f0f0f0; padding: 10px;">
+                <figure>
+                    <img src="https://placehold.co/400x200/525252/FFF?text=Article+Image" alt="Article placeholder" style="width: 100%; height: auto; display: block; margin-bottom: 5px;">
+                    <figcaption style="font-size: 10px; color: #666; text-align: center; margin-bottom: 10px;">A captivating image related to the article.</figcaption>
+                </figure>
+                <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">The Future of AI in Tech</h4>
+                <p style="font-size: 11px; color: #333; margin: 0 0 10px 0;">A deep dive into how artificial intelligence is shaping the tech landscape and what to expect in the next decade.</p>
+                <a href="#" style="color: #1e5eb6; text-decoration: none; font-size: 11px;">Read more &gt;</a>
+            </div>
+
+            <div style="width: calc(50% - 8px); min-width: 200px; border: 1px solid #ccc; background: #f0f0f0; padding: 10px;">
+                <img src="https://placehold.co/400x200/374151/FFF?text=Article+Image" alt="Article placeholder" style="width: 100%; height: auto; display: block; margin-bottom: 10px;">
+                <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">Cybersecurity Best Practices</h4>
+                <p style="font-size: 11px; color: #333; margin: 0 0 10px 0;">Protecting your data is more important than ever. Learn the essential steps to keep your information safe and secure.</p>
+                <a href="#" style="color: #1e5eb6; text-decoration: none; font-size: 11px;">Read more &gt;</a>
+            </div>
+
+            <div style="width: calc(50% - 8px); min-width: 200px; border: 1px solid #ccc; background: #f0f0f0; padding: 10px;">
+                <img src="https://placehold.co/400x200/525252/FFF?text=Article+Image" alt="Article placeholder" style="width: 100%; height: auto; display: block; margin-bottom: 10px;">
+                <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">The Future of AI in Tech</h4>
+                <p style="font-size: 11px; color: #333; margin: 0 0 10px 0;">A deep dive into how artificial intelligence is shaping the tech landscape and what to expect in the next decade.</p>
+                <a href="#" style="color: #1e5eb6; text-decoration: none; font-size: 11px;">Read more &gt;</a>
+            </div>
+
+            <div style="width: calc(50% - 8px); min-width: 200px; border: 1px solid #ccc; background: #f0f0f0; padding: 10px;">
+                <img src="https://placehold.co/400x200/374151/FFF?text=Article+Image" alt="Article placeholder" style="width: 100%; height: auto; display: block; margin-bottom: 10px;">
+                <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">Cybersecurity Best Practices</h4>
+                <p style="font-size: 11px; color: #333; margin: 0 0 10px 0;">Protecting your data is more important than ever. Learn the essential steps to keep your information safe and secure.</p>
+                <a href="#" style="color: #1e5eb6; text-decoration: none; font-size: 11px;">Read more &gt;</a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>More Form Fields</h3>
+    <div class="box-content">
+        <form action="#" method="POST" class="form-container">
+            <div class="form-group">
+                <label for="full-name" class="form-label">Full Name</label>
+                <input type="text" name="full-name" id="full-name" autocomplete="name" required="" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="phone-number" class="form-label">Phone Number</label>
+                <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" name="dob" id="dob" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="country" class="form-label">Country</label>
+                <select id="country" name="country" class="form-select">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Mexico</option>
+                </select>
+            </div>
+
+            <fieldset style="border: 1px solid #ccc; padding: 10px; margin-top: 15px;">
+                <legend style="font-size: 11px; font-weight: bold; color: #000; padding: 0 5px;">Notification Preferences</legend>
+                <div style="margin-bottom: 8px;">
+                    <input id="comments" name="comments" type="checkbox" style="vertical-align: middle;">
+                    <label for="comments" style="font-weight: bold; font-size: 11px; color: #333; margin-left: 5px;">Comments</label>
+                    <p style="font-size: 10px; color: #666; margin: 2px 0 0 20px;">Get notified when someone posts a comment on your profile.</p>
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <input id="candidates" name="candidates" type="radio" style="vertical-align: middle;">
+                    <label for="candidates" style="font-weight: bold; font-size: 11px; color: #333; margin-left: 5px;">Candidates</label>
+                    <p style="font-size: 10px; color: #666; margin: 2px 0 0 20px;">Get notified when a candidate applies for a job.</p>
+                </div>
+            </fieldset>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label for="user-bio" class="form-label">Your Bio</label>
+                <textarea id="user-bio" name="user-bio" rows="4" class="form-textarea" placeholder="Tell us a little about yourself..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rating" class="form-label">Rating (1-10)</label>
+                <input type="range" id="rating" name="rating" min="1" max="10" value="5" style="display: block; width: 98%; margin-top: 3px;">
+            </div>
+            <div class="form-group">
+                <label for="browser-choice" class="form-label">Favorite Browser</label>
+                <input list="browsers" id="browser-choice" name="browser-choice" class="form-input">
+                <datalist id="browsers">
+                    <option value="Chrome"></option>
+                    <option value="Firefox"></option>
+                    <option value="Safari"></option>
+                    <option value="Edge"></option>
+                </datalist>
+            </div>
+        </form>
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>Article Text Styling</h3>
+    <div class="box-content" style="display: flex; gap: 15px;">
+        <div style="flex: 3;">
+            <article class="article-prose">
+                <h2>A Deep Dive into Modern Web Design</h2> <h3 style="font-size: 14px; font-weight: bold; color: #000; margin-top: 15px; margin-bottom: 5px;">A Deep Dive into Modern Web Design</h3>
+
+                <p>The world of web design is constantly evolving. In recent years, we've seen a shift towards **mobile-first design**, prioritizing performance and accessibility on smaller screens. This approach ensures that content is consumable by the largest possible audience.</p>
+
+                <p>Another key trend is the use of _minimalist design_, which focuses on simplicity and clean lines to reduce cognitive load for users. This often involves ample use of white space and a limited color palette.</p>
+
+                <blockquote class="article-blockquote">
+                    "Good design is not about what's trendy, but what is timeless and effective for the user."
+                    <p style="font-style: normal; text-align: right; margin-top: 5px; font-size: 11px; color: #333;">- Unknown Designer</p>
+                </blockquote>
+
+                <p>Web designers are now focused on building fast, accessible, and inclusive websites. This includes optimizing images, using semantic HTML, and ensuring proper color contrast. These practices are not just for usability, but also for improved SEO.</p>
+            </article>
+
+            <div style="border-top: 1px dotted #ccc; padding-top: 10px; margin-top: 15px; font-size: 10px; color: #666;">
+                <p style="margin: 0;">Published on: October 26, 2023</p>
+                <p style="margin: 0;">Author: Jane Doe</p>
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 150px; background-color: #eaf3fd; padding: 10px; border: 1px solid #d8e5f7;">
+            <h4 style="font-weight: bold; color: #004a91; margin: 0 0 10px 0; font-size: 12px;">Related Topics</h4>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 5px;"><a href="#" style="color: #1e5eb6; text-decoration: none; font-size: 11px;">The Impact of UX on Conversion Rates</a></li>
+                <li style="margin-bottom: 5px;"><a href="#" style="color: #1e5eb6; text-decoration: none; font-size: 11px;">CSS Grid vs. Flexbox: A Head-to-Head</a></li>
+                <li style="margin-bottom: 5px;"><a href="#" style="color: #1e5eb6; text-decoration: none; font-size: 11px;">Accessibility for Modern Web Apps</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>Media Elements</h3>
+    <div class="box-content" style="display: flex; gap: 15px;">
+        <div style="flex: 1;">
+            <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">Video Demo</h4>
+            <video controls="" style="width: 100%; height: auto; border: 1px solid #ccc; background: #000;">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </source></video>
+        </div>
+        <div style="flex: 1;">
+            <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">Audio Clip</h4>
+            <audio controls="" style="width: 100%;">
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </source></audio>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="box">
+    <h3>Lists</h3>
+    <div class="box-content">
+        <div style="margin-bottom: 15px;">
+            <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">Unordered List</h4>
+            <ul>
+                <li>Responsive design for mobile and desktop.</li>
+                <li>Clean and modern user interface.</li>
+                <li>Fast loading times and optimized performance.</li>
+                <li>Secure and user-friendly login forms.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 style="font-size: 13px; color: #000; margin: 0 0 5px 0;">Ordered List</h4>
+            <ol style="list-style: decimal; padding-left: 25px; margin: 0 0 10px 0; font-size: 12px;">
+                <li>Plan your site structure and content.</li>
+                <li>Design your wireframes and mockups.</li>
+                <li>Code the front-end components using Tailwind.</li>
+                <li>Integrate with a backend and add functionality.</li>
+                <li>Launch and monitor your website.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+        </div>
+        
+            <!-- END HEADER LOGIC SWITCH -->
+      <div style="clear:both;"></div>
+
+      <!-- Rate This Article Box (Conditional) -->
+      
+    </div>
+
+  </div> <!-- End Container -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="left-links">
+      <img src="https://pub-a012c65ca1384df0a3e2c41cb4b36f5c.r2.dev/placeholders/P-15de0cdf-e380-4f7b-8ffc-24fbbb1fe92c.png" class="windows-logo"><a href="/privacy">Privacy</a>| 
+      <img src="https://pub-a012c65ca1384df0a3e2c41cb4b36f5c.r2.dev/placeholders/L-9406422a-38aa-4639-bd35-fb84b0c8035b.png" class="windows-logo"><a href="/legal">Legal</a>|
+    </div>
+    <div class="copyright">
+      &copy; 2025 COHERENT
+    </div>
+    <div class="right-links"> |
+      <img src="https://pub-a012c65ca1384df0a3e2c41cb4b36f5c.r2.dev/placeholders/P-66f3db23-b3e6.png" class="windows-logo"><a href="/statistics">Page Statistics</a> |
+      <img src="https://pub-a012c65ca1384df0a3e2c41cb4b36f5c.r2.dev/placeholders/S-55761e4d-dcfa.png" class="windows-logo"><a href="/sitemap">Site Map</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
