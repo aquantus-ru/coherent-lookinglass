@@ -1,6 +1,3 @@
-{% extends "base.html" %}
-
-{% block content %}
 <div class="box">
     <h3>Welcome</h3>
     <div class="box-content">
@@ -47,5 +44,3 @@
         Loading...
     </div>
 </div>
-
-{% endblock %}
