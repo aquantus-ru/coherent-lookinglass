@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% block title %}Unofficial Baby Names{% endblock %} | COHERENT</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title><?php echo isset($pageTitle) ? $pageTitle : 'Unofficial Baby Names'; ?> | COHERENT</title>
+<link rel="stylesheet" href="static/style.css">
 </head>
 <body>
 
@@ -12,10 +12,10 @@
 
   <div class="super-topbar">
     <div class="left-links">
-      <span class="bold">{{ now.strftime('%A, %B %d, %Y') }}</span>
+      <span class="bold"><?php echo date('l, F d, Y'); ?></span>
     </div>
     <div class="right-links">
-        <a href="{{ url_for('admin') }}">ADMIN</a>
+        <a href="index.php?page=admin">ADMIN</a>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
 
         <div class="logo" style="position: relative; z-index: 1; padding: 10px 20px;">
             <h1 style="color: #ffffff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5); white-space: nowrap;">
-                <a href="{{ url_for('index') }}" style="color: #fff; text-decoration: none;">BABY NAMES<span style="font-weight:normal; font-family:Arial; font-size:20px; color:#a3c4e6;">.unofficial</span></a>
+                <a href="index.php" style="color: #fff; text-decoration: none;">BABY NAMES<span style="font-weight:normal; font-family:Arial; font-size:20px; color:#a3c4e6;">.unofficial</span></a>
             </h1>
         </div>
 
@@ -49,12 +49,12 @@
   <div class="channel-nav">
     <ul>
             <li>
-            <a href="{{ url_for('index') }}">
+            <a href="index.php">
                 Home
             </a>
         </li>
             <li>
-            <a href="{{ url_for('index') }}">
+            <a href="index.php">
                 All Names
             </a>
         </li>
@@ -68,8 +68,8 @@
         <h3>Navigation</h3>
         <div class="box-content">
           <ul class="sidebar-nav-list">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="#submit-form">Submit a Name</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="index.php#submit-form">Submit a Name</a></li>
           </ul>
         </div>
       </div>
@@ -84,24 +84,3 @@
     </div>
 
     <div class="main-col">
-        {% block content %}{% endblock %}
-    </div>
-
-  </div> <!-- End Container -->
-
-  <!-- Footer -->
-  <footer>
-    <div class="left-links">
-      <a href="#">Privacy</a>|
-      <a href="#">Legal</a>
-    </div>
-    <div class="copyright">
-      &copy; 2025 Unofficial Baby Names
-    </div>
-  </footer>
-
-</div>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>

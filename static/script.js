@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Polling function
     function loadNames() {
         // Load suggestions
-        fetch('/api/names?action=suggestions')
+        fetch('api.php?action=suggestions')
             .then(response => response.json())
             .then(data => {
                 const list = document.getElementById('suggested-names-list');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const ul = document.createElement('ul');
                     data.forEach(item => {
                         const li = document.createElement('li');
-                        li.innerHTML = `<a href="/name/${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
+                        li.innerHTML = `<a href="index.php?page=detail&id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
                         ul.appendChild(li);
                     });
                     list.appendChild(ul);
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
         // Load all names
-        fetch('/api/names?action=list')
+        fetch('api.php?action=list')
             .then(response => response.json())
             .then(data => {
                 const list = document.getElementById('all-names-list');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const ul = document.createElement('ul');
                         data.forEach(item => {
                             const li = document.createElement('li');
-                            li.innerHTML = `<a href="/name/${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
+                            li.innerHTML = `<a href="index.php?page=detail&id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
                             ul.appendChild(li);
                         });
                         list.appendChild(ul);
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Show top 5
                         data.slice(0, 5).forEach(item => {
                             const li = document.createElement('li');
-                            li.innerHTML = `<a href="/name/${item.id}">${item.name}</a>`;
+                            li.innerHTML = `<a href="index.php?page=detail&id=${item.id}">${item.name}</a>`;
                             ul.appendChild(li);
                         });
                         sidebarList.appendChild(ul);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 definition: formData.get('definition')
             };
 
-            fetch('/api/names', {
+            fetch('api.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            fetch(`/api/names?action=search&q=${encodeURIComponent(query)}`)
+            fetch(`api.php?action=search&q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
                     resultsContainer.innerHTML = '';
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             li.style.cursor = 'pointer';
                             li.innerHTML = `<b>${item.name}</b> - <span class="small-text">${item.definition.substring(0, 30)}...</span>`;
                             li.addEventListener('click', () => {
-                                window.location.href = `/name/${item.id}`;
+                                window.location.href = `index.php?page=detail&id=${item.id}`;
                             });
                             li.onmouseover = function() { this.style.backgroundColor = '#eef'; };
                             li.onmouseout = function() { this.style.backgroundColor = '#fff'; };
