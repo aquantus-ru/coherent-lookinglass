@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const ul = document.createElement('ul');
                     data.forEach(item => {
                         const li = document.createElement('li');
-                        li.innerHTML = `<a href="index.php?page=detail&id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
+                        li.innerHTML = `<a href="babynames.php?id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
                         ul.appendChild(li);
                     });
                     list.appendChild(ul);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const ul = document.createElement('ul');
                         data.forEach(item => {
                             const li = document.createElement('li');
-                            li.innerHTML = `<a href="index.php?page=detail&id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
+                            li.innerHTML = `<a href="babynames.php?id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
                             ul.appendChild(li);
                         });
                         list.appendChild(ul);
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Show top 5
                         data.slice(0, 5).forEach(item => {
                             const li = document.createElement('li');
-                            li.innerHTML = `<a href="index.php?page=detail&id=${item.id}">${item.name}</a>`;
+                            li.innerHTML = `<a href="babynames.php?id=${item.id}">${item.name}</a>`;
                             ul.appendChild(li);
                         });
                         sidebarList.appendChild(ul);
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             li.style.cursor = 'pointer';
                             li.innerHTML = `<b>${item.name}</b> - <span class="small-text">${item.definition.substring(0, 30)}...</span>`;
                             li.addEventListener('click', () => {
-                                window.location.href = `index.php?page=detail&id=${item.id}`;
+                                window.location.href = `babynames.php?id=${item.id}`;
                             });
                             li.onmouseover = function() { this.style.backgroundColor = '#eef'; };
                             li.onmouseout = function() { this.style.backgroundColor = '#fff'; };
