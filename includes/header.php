@@ -15,7 +15,11 @@
       <span class="bold"><?php echo date('l, F d, Y'); ?></span>
     </div>
     <div class="right-links">
-        <a href="index.php?page=admin">ADMIN</a>
+        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
+            <a href="babynames_admin.php?logout=1">LOGOUT</a>
+        <?php else: ?>
+            <a href="babynames_admin.php">ADMIN</a>
+        <?php endif; ?>
     </div>
   </div>
 
@@ -27,7 +31,7 @@
 
         <div class="logo" style="position: relative; z-index: 1; padding: 10px 20px;">
             <h1 style="color: #ffffff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5); white-space: nowrap;">
-                <a href="index.php" style="color: #fff; text-decoration: none;">BABY NAMES<span style="font-weight:normal; font-family:Arial; font-size:20px; color:#a3c4e6;">.unofficial</span></a>
+                <a href="babynames.php" style="color: #fff; text-decoration: none;">BABY NAMES<span style="font-weight:normal; font-family:Arial; font-size:20px; color:#a3c4e6;">.unofficial</span></a>
             </h1>
         </div>
 
@@ -49,12 +53,12 @@
   <div class="channel-nav">
     <ul>
             <li>
-            <a href="index.php">
+            <a href="babynames.php">
                 Home
             </a>
         </li>
             <li>
-            <a href="index.php">
+            <a href="babynames.php">
                 All Names
             </a>
         </li>
@@ -68,8 +72,11 @@
         <h3>Navigation</h3>
         <div class="box-content">
           <ul class="sidebar-nav-list">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="index.php#submit-form">Submit a Name</a></li>
+            <li><a href="babynames.php">Home</a></li>
+            <li><a href="babynames.php#submit-form">Submit a Name</a></li>
+            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
+                <li><a href="babynames_admin.php"><b>Admin Dashboard</b></a></li>
+            <?php endif; ?>
           </ul>
         </div>
       </div>

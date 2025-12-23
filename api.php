@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/db.php';
 
 header('Content-Type: application/json');
@@ -30,19 +31,29 @@ if ($method === 'GET') {
     $input = json_decode(file_get_contents('php://input'), true);
 
     if ($action === 'approve') {
+        if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
+            http_response_code(403);
+            echo json_encode(['success' => false, 'error' => 'Unauthorized']);
+            exit;
+        }
         $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
         $stmt = $pdo->prepare("UPDATE names SET status = 'approved' WHERE id = ?");
         $stmt->execute([$id]);
         echo json_encode(['success' => true]);
 
     } elseif ($action === 'reject') {
+        if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
+            http_response_code(403);
+            echo json_encode(['success' => false, 'error' => 'Unauthorized']);
+            exit;
+        }
         $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
         $stmt = $pdo->prepare("UPDATE names SET status = 'rejected' WHERE id = ?");
         $stmt->execute([$id]);
         echo json_encode(['success' => true]);
 
     } else {
-        // Submission
+        // Submission - Public
         if ($input && isset($input['name']) && isset($input['definition'])) {
             $stmt = $pdo->prepare("INSERT INTO names (name, definition, status) VALUES (?, ?, 'pending')");
             $stmt->execute([$input['name'], $input['definition']]);
