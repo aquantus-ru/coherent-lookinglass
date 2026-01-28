@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    function escapeHtml(text) {
+        if (text == null) return '';
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
     // Polling function
     function loadNames() {
         // Load suggestions
@@ -16,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const ul = document.createElement('ul');
                     data.forEach(item => {
                         const li = document.createElement('li');
-                        li.innerHTML = `<a href="babynames.php?id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
+                        li.innerHTML = `<a href="babynames.php?id=${item.id}"><b>${escapeHtml(item.name)}</b></a>: ${escapeHtml(item.definition)}`;
                         ul.appendChild(li);
                     });
                     list.appendChild(ul);
@@ -38,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const ul = document.createElement('ul');
                         data.forEach(item => {
                             const li = document.createElement('li');
-                            li.innerHTML = `<a href="babynames.php?id=${item.id}"><b>${item.name}</b></a>: ${item.definition}`;
+                            li.innerHTML = `<a href="babynames.php?id=${item.id}"><b>${escapeHtml(item.name)}</b></a>: ${escapeHtml(item.definition)}`;
                             ul.appendChild(li);
                         });
                         list.appendChild(ul);
@@ -55,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Show top 5
                         data.slice(0, 5).forEach(item => {
                             const li = document.createElement('li');
-                            li.innerHTML = `<a href="babynames.php?id=${item.id}">${item.name}</a>`;
+                            li.innerHTML = `<a href="babynames.php?id=${item.id}">${escapeHtml(item.name)}</a>`;
                             ul.appendChild(li);
                         });
                         sidebarList.appendChild(ul);
@@ -123,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const li = document.createElement('li');
                             li.style.padding = '3px';
                             li.style.cursor = 'pointer';
-                            li.innerHTML = `<b>${item.name}</b> - <span class="small-text">${item.definition.substring(0, 30)}...</span>`;
+                            li.innerHTML = `<b>${escapeHtml(item.name)}</b> - <span class="small-text">${escapeHtml(item.definition.substring(0, 30))}...</span>`;
                             li.addEventListener('click', () => {
                                 window.location.href = `babynames.php?id=${item.id}`;
                             });
